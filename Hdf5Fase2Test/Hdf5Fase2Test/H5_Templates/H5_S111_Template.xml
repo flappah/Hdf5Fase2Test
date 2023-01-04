@@ -12,14 +12,14 @@
 		<Attribute name="productSpecification" type="string" />
 		<Attribute name="southBoundLatitude" type="double" mode="auto" />
 		<Attribute name="surfaceCurrentDepth" type="double" />
-    <Attribute name="verticalCoordinateBase" type="VerticalCoordinateBaseEnum" />
-    <Attribute name="verticalCS" type="string" />
-    <Attribute name="westBoundLongitude" type="double" mode="auto" />
+    		<Attribute name="verticalCoordinateBase" type="VerticalCoordinateBaseEnum" />
+    		<Attribute name="verticalCS" type="string" />
+    		<Attribute name="westBoundLongitude" type="double" mode="auto" />
 	</Attributes>
 	<Group name="Group_F">
 		<DataSet name="SurfaceCurrent" attributes="yes" type="SurfaceCurrentInformationInstance">
 			<Attributes>
-				<Attribute name="chunking" type="string" value="0,0" />
+			<Attribute name="chunking" type="string" value="0,0" />
 			</Attributes>
 			<Columns>
 				<Column name="code" type="string" />
@@ -62,7 +62,7 @@
 			<Attribute name="dataCodingFormat" type="DataCodingFormatEnum" />
 			<Attribute name="dimension" type="long" />
 			<Attribute name="horizontalPositionUncertainty" type="double" />
-      <Attribute name="methodCurrentsProduct" type="string" />
+      			<Attribute name="methodCurrentsProduct" type="string" />
 			<Attribute name="maxDatasetCurrentSpeed" type="double" mode="auto" />
 			<Attribute name="minDatasetCurrentSpeed" type="double" mode="auto" />
 			<Attribute name="numInstances" type="long" mode="auto" />
@@ -90,8 +90,8 @@
 			</Attributes>
 			<Group name="Group"
 				   multiple="true"
-                   upper_limit="999"
-                   attributes="yes"
+                   		   upper_limit="999"
+                   		   attributes="yes"
 				   data="true">
 				<Attributes>
 					<Attribute name="endDateTime" type="DateTime" mode="auto" mask="yyyyMMddTHHmmssZ" />
