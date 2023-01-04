@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<S111Product attributes="yes">
+	<Attributes>
+		<Attribute name="depthTypeIndex" type="DepthTypeIndexEnum" />
+		<Attribute name="eastBoundLongitude" type="double" mode="auto" />
+		<Attribute name="geographicIdentifier" type="string" />
+		<Attribute name="horizontalCRS" type="long" />
+		<Attribute name="issueDate" type="datetime" mode="auto" mask="yyyyMMdd" />
+		<Attribute name="issueTime" type="datetime" mode="auto" mask="HHmmssZ" />
+		<Attribute name="metaData" type="string" />
+		<Attribute name="northBoundLatitude" type="double" mode="auto" />
+		<Attribute name="productSpecification" type="string" />
+		<Attribute name="southBoundLatitude" type="double" mode="auto" />
+		<Attribute name="surfaceCurrentDepth" type="double" />
+    <Attribute name="verticalCoordinateBase" type="VerticalCoordinateBaseEnum" />
+    <Attribute name="verticalCS" type="string" />
+    <Attribute name="westBoundLongitude" type="double" mode="auto" />
+	</Attributes>
+	<Group name="Group_F">
+		<DataSet name="SurfaceCurrent" attributes="yes" type="SurfaceCurrentInformationInstance">
+			<Attributes>
+				<Attribute name="chunking" type="string" value="0,0" />
+			</Attributes>
+			<Columns>
+				<Column name="code" type="string" />
+				<Column name="name" type="string" />
+				<Column name="uom.name" type="string" />
+				<Column name="fillValue" type="string" />
+				<Column name="dataType" type="string" />
+				<Column name="lower" type="string" />
+				<Column name="upper" type="string" />
+				<Column name="closure" type="string"  />
+			</Columns>
+			<Rows>
+				<Row>
+					<Item name="code" type="string" value="surfaceCurrentSpeed" />
+					<Item name="name" type="string" value="Surface current speed" />
+					<Item name="uomName" type="string" value="knots" />
+					<Item name="fillValue" type="string" value="-9999.0" />
+					<Item name="dataType" type="string" value="H5T_FLOAT" />
+					<Item name="lower" type="string" value="0.0" />
+					<Item name="upper" type="string" value="" />
+					<Item name="closure" type="string" value="geSemiInterval" />
+				</Row>
+				<Row>
+					<Item name="code" type="string" value="surfaceCurrentDirection" />
+					<Item name="name" type="string" value="Surface current direction" />
+					<Item name="uomName" type="string" value="arc-degree" />
+					<Item name="fillValue" type="string" value="-9999.0" />
+					<Item name="dataType" type="string" value="H5T_FLOAT" />
+					<Item name="lower" type="string" value="0.0" />
+					<Item name="upper" type="string" value="360.0" />
+					<Item name="closure" type="string" value="geLtInterval" />
+				</Row>
+			</Rows>
+		</DataSet>
+		<DataSet name="featureCode" value="SurfaceCurrent"/>
+	</Group>
+	<Group name="SurfaceCurrent" attributes="yes" feature="true">
+		<Attributes>
+			<Attribute name="commonPointRule" type="CommonPointRuleEnum" />
+			<Attribute name="dataCodingFormat" type="DataCodingFormatEnum" />
+			<Attribute name="dimension" type="long" />
+			<Attribute name="horizontalPositionUncertainty" type="double" />
+      <Attribute name="methodCurrentsProduct" type="string" />
+			<Attribute name="maxDatasetCurrentSpeed" type="double" mode="auto" />
+			<Attribute name="minDatasetCurrentSpeed" type="double" mode="auto" />
+			<Attribute name="numInstances" type="long" mode="auto" />
+			<Attribute name="timeUncertainty" type="double" />
+			<Attribute name="typeOfCurrentData" type="TypeOfCurrentDataEnum" />
+			<Attribute name="verticalUncertainty" type="double" />
+		</Attributes>
+		<Group name="SurfaceCurrent"
+			   multiple="true"
+			   upper_limit="99"
+			   attributes="yes"
+			   feature_instance="true">
+			<Attributes>
+				<Attribute name="dateTimeOfFirstRecord" type="DateTime" mode="auto" mask="yyyyMMddTHHmmssZ" />
+				<Attribute name="dateTimeOfLastRecord" type="DateTime" mode="auto" mask="yyyyMMddTHHmmssZ" />
+				<Attribute name="eastBoundLongitude" type="double" mode="auto" />
+				<Attribute name="instanceChunking" type="string" mode="static" value="0,0" />
+				<Attribute name="northBoundLatitude" type="double" mode="auto" />
+				<Attribute name="numGRP" type="long" mode="auto" />
+				<Attribute name="numberOfStations" type="long" mode="auto" />
+				<Attribute name="numberOfTimes" type="long" mode="auto" />
+				<Attribute name="southBoundLatitude" type="double" mode="auto" />
+				<Attribute name="timeRecordInterval" type="long" mode="static" value="43200" />
+				<Attribute name="westBoundLongitude" type="double" mode="auto" />
+			</Attributes>
+			<Group name="Group"
+				   multiple="true"
+                   upper_limit="999"
+                   attributes="yes"
+				   data="true">
+				<Attributes>
+					<Attribute name="endDateTime" type="DateTime" mode="auto" mask="yyyyMMddTHHmmssZ" />
+					<Attribute name="numberOfTimes" type="long" mode="auto" />
+					<Attribute name="startDateTime" type="DateTime" mode="auto" mask="yyyyMMddTHHmmssZ" />
+					<Attribute name="stationIdentification" type="string" mode="auto" />
+					<Attribute name="stationName" type="string" mode="auto" />
+					<Attribute name="timeIntervalIndex" type="long" mode="static" value="1" />
+					<Attribute name="timeRecordInterval" type="long" mode="static" value="3600" />
+				</Attributes>
+				<DataSet name="values" type="SurfaceCurrentInstance" data="true">
+					<Columns>
+						<Column name="speed" type="double" data_field="Speed" />
+						<Column name="direction" type="double" data_field="Direction" />
+					</Columns>
+				</DataSet>
+			</Group>
+			<Group name="Positioning">
+				<DataSet name="geometryValues" type="GeometryValueInstance" data="true">
+					<Columns>
+						<Column name="longitude" type="double" data_field="Longitude" />
+						<Column name="latitude" type="double" data_field="Latitude" />
+					</Columns>
+				</DataSet>
+			</Group>
+			<DataSet name="uncertainty" type="Uncertainty">
+				<Columns>
+					<Column name="name" type="string" />
+					<Column name="value" type="double" />
+				</Columns>
+				<Rows>
+					<Row>
+						<Item name="name" value="surfaceCurrentSpeedUncertainty" />
+						<Item name="value" type="double" value="-1.0" />
+					</Row>
+					<Row>
+						<Item name="name" value="surfaceCurrentDirectionUncertainty" />
+						<Item name="value" type="double" value="-1.0" />
+					</Row>
+				</Rows>
+			</DataSet>
+		</Group>
+		<DataSet name="axisNames" value="longitude,latitude" separator=","/>
+	</Group>
+</S111Product>
